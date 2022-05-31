@@ -27,13 +27,6 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'citizens',
         theme: ThemeData(
-          primaryColor: const Color(0xff121A23),
-          cardColor: const Color(0xff121A23),
-          scaffoldBackgroundColor: const Color(0xff121A23),
-          textTheme: const TextTheme(
-            bodyText2: TextStyle(color: Color(0xffFFFFFF))
-          )
-          //scaffoldBackgroundColor: const Color(0xff17202A),
         ),
         home: const LoginPage(),
       ),
