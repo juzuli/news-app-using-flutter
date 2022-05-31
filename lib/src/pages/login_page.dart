@@ -13,18 +13,13 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      backgroundColor: Colors.lightBlue.shade400,
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Column(mainAxisSize: MainAxisSize.min, children: [
-            Image.asset(
-              'assets/images/citizen logo.png',
-              scale: 8,
-            ),
             const Text(
-              'write messages',
-              style: TextStyle(color: Colors.white),
+              'Login',
+              style: TextStyle(fontSize: 40, fontWeight: FontWeight.w600),
             ),
             const SizedBox(height: 50),
             Padding(
@@ -32,81 +27,89 @@ class _LoginPageState extends State<LoginPage> {
               child: Column(
                 children: [
                   TextFormField(
-                    style: const TextStyle(
-                      color: Colors.white,
-                    ),
-                    cursorColor: Colors.white,
+                    style: const TextStyle(),
                     keyboardType: TextInputType.text,
-                    decoration: const InputDecoration(
-                      labelText: 'Login',
-                      labelStyle: TextStyle(
-                        color: Colors.white,
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      labelText: 'Username',
+                      labelStyle: const TextStyle(
                         fontStyle: FontStyle.italic,
                       ),
-                      icon: Icon(
+                      icon: const Icon(
                         Icons.person,
-                        color: Colors.white,
-                      ),
-                      enabledBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(
-                          color: Colors.white,
-                        ),
                       ),
                     ),
                   ),
+                  const SizedBox(height: 18),
                   TextFormField(
-                    style: const TextStyle(
-                      color: Colors.white,
-                    ),
-                    cursorColor: Colors.white,
+                    style: const TextStyle(),
                     keyboardType: TextInputType.text,
-                    decoration: const InputDecoration(
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(20),
+                      ),
                       labelText: 'Password',
-                      labelStyle: TextStyle(
-                        color: Colors.white,
+                      labelStyle: const TextStyle(
                         fontStyle: FontStyle.italic,
                       ),
-                      icon: Icon(
+                      icon: const Icon(
                         Icons.lock,
-                        color: Colors.white,
-                      ),
-                      enabledBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(
-                          color: Colors.white,
-                        ),
                       ),
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.all(20.0),
-                    child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        primary: Colors.white,
-                        onPrimary: Colors.lightBlue.shade400,
-                        padding: const EdgeInsets.symmetric(
-                          vertical: 10,
-                          horizontal: 50,
-                        ),
+                    padding: const EdgeInsets.only(
+                      top: 20.0,
+                      left: 40,
+                    ),
+                    child: Container(
+                      width: MediaQuery.of(context).size.width,
+                      height: 55,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        color: Colors.black,
                       ),
-                      onPressed: () {
-                        Navigator.pushReplacement(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const DashboardPage(),
+                      child: TextButton(
+                        onPressed: () {
+                          Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const DashboardPage(),
+                            ),
+                          );
+                        },
+                        child: Text(
+                          'Sign In'.toUpperCase(),
+                          style: const TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
                           ),
-                        );
-                      },
-                      child: const Text(
-                        'Login',
-                        style: TextStyle(fontSize: 16),
+                        ),
                       ),
                     ),
                   ),
-                  const Text(
-                    'Forget password?',
-                    style: TextStyle(
-                      decoration: TextDecoration.underline,
-                      color: Colors.white,
+                   Align(
+                    alignment: Alignment.centerRight,
+                    child: TextButton(
+                      onPressed: (){},
+                      child: const Text(
+                        'Forget password?',
+                      ),
                     ),
                   ),
                   const SizedBox(
@@ -116,7 +119,6 @@ class _LoginPageState extends State<LoginPage> {
                   const Text(
                     'or login by',
                     style: TextStyle(
-                      color: Colors.white,
                       fontStyle: FontStyle.italic,
                     ),
                   ),
@@ -129,10 +131,10 @@ class _LoginPageState extends State<LoginPage> {
                       Image.asset(
                         'assets/images/twitter-512.png',
                         scale: 25,
+                        color: Colors.black,
                       ),
                       const Icon(
                         Icons.facebook,
-                        color: Colors.white,
                       ),
                     ],
                   ),
@@ -143,15 +145,12 @@ class _LoginPageState extends State<LoginPage> {
                     children: const [
                       Text(
                         'Don\'t have an account?',
-                        style: TextStyle(
-                          color: Colors.white,
-                        ),
+                        style: TextStyle(),
                       ),
                       Text(
                         'Sign Up',
                         style: TextStyle(
                           decoration: TextDecoration.underline,
-                          color: Colors.white,
                         ),
                       ),
                       SizedBox(
@@ -159,7 +158,6 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                       Icon(
                         Icons.info,
-                        color: Colors.white,
                       )
                     ],
                   ),
